@@ -14,7 +14,7 @@ private let swizzling: (AnyClass, Selector, Selector) -> () = { forClass, origin
     method_exchangeImplementations(originalMethod!, swizzledMethod!)
 }
 
-extension UIControl {
+public extension UIControl {
     
     static let classCInit: Void = {
         let originalSelector = #selector(sendAction(_:to:for:))
