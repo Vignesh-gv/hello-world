@@ -7,7 +7,6 @@
 //
 
 import UIKit
-
 private let swizzling: (UIViewController.Type) -> () = { viewController in
     
     let originalSelector = #selector(viewController.viewWillAppear(_:))
@@ -18,7 +17,7 @@ private let swizzling: (UIViewController.Type) -> () = { viewController in
     
     method_exchangeImplementations(originalMethod!, swizzledMethod!) }
 
-extension UIViewController {
+public extension UIViewController {
     
     static let classInit: Void = {
         // make sure this isn't a subclass
